@@ -1,6 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
   Text,
@@ -17,10 +15,10 @@ import {
     <View style={styles.container}>    
       <View style={styles.innerContainer}>
         <Text style={styles.heading}>Workout app 💪</Text>
-        <Image style={styles.img} source={require('../workout.png')} />
+        <Image style={styles.img} source={require('../home.png')} />
       </View>
       <View style={styles.btn} >
-        <Button onPress={() =>navigation.navigate('workout')} title='Get started!' />
+        <Button color='red' onPress={() =>navigation.navigate('Start')} title='Get started!' />
       </View>
     </View>
 
@@ -32,6 +30,7 @@ const styles=StyleSheet.create({
     flex:1,
     alignItems:"center",
     justifyContent:"center", 
+  
   },
   innerContainer:{
     flex:1,
@@ -51,6 +50,7 @@ const styles=StyleSheet.create({
     marginBottom:100,
   },
   btn:{
+    
     position:"absolute",
     bottom:0,
     width:"100%",

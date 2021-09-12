@@ -2,7 +2,7 @@ package com.awesomeproject;
 
 import com.facebook.react.ReactActivity;
 
-// import android.os.Bundle;
+ import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -15,8 +15,8 @@ public class MainActivity extends ReactActivity {
     return "AwesomeProject";
   }
 
-  // @Override
-  // protected void onCreate(Bundle savedInstanceState) {
-  // super.onCreate(null);
-}
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+   }
 }
