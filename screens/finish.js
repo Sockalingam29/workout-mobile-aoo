@@ -5,17 +5,30 @@ import {
     Button,
     StyleSheet
   } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { showMessage } from 'react-native-flash-message';
 
   
    const Finish = ({navigation}) => 
    {
+    useEffect(() => {
+      // Runs ONCE after initial rendering
+      showMessage({
+        message: "WOW! You have completed!",
+        type: "info",
+        backgroundColor:"red",
+        color:"white",
+        
+        
+      });
+    }, []);
     return (
       <View style={styles.container}>    
         <View style={styles.innerContainer}>
           <Text style={styles.heading}>That's great! 🥳</Text>
           <Image style={styles.img} source={require('../finish.png')} />
           <Text style={styles.txt}>You have taken your first step towards staying fit 😀</Text>
+        
         </View>
         
       </View>
