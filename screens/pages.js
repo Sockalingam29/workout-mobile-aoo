@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { StyleSheet, Text, TouchableNativeFeedback, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
-import { showMessage } from 'react-native-flash-message';
+import { showMessage,hideMessage } from 'react-native-flash-message';
 
-
-
-export default function Pushups({navigation}) {
-  // const [time, settime] = useState(10);
-  // let time=10;
-  // timer();
-  // function timer(){
-  //     let inter=setInterval(dostuff, 1000);
-  // }
-
-  // function dostuff(){
-  //   if(time==1)
-  //   {
-  //     clearInterval(inter);
-  //   }
-  //   else{
-  //     time--;
-  //   }
-  // }
-  // Timer(10);
- 
-  
- 
+export default function Pages({navigation,img,txt,btn}) {
     return (
-    
         <SafeAreaView style={[styles.container,containerstyle]}>
          <View style={styles.btn}>
          <Button
@@ -34,10 +11,16 @@ export default function Pushups({navigation}) {
           color='red'
           title="Next workout" 
           onPress={() =>{
-            navigation.navigate('Jumping Jacks')
+            /* HERE WE GONE SHOW OUR FIRST MESSAGE */
+            showMessage({
+              message: "Simple message",
+              type: "info",
+            });
           }}
+        
+
           />
-          {/*  */}
+          {/* navigation.navigate('Jumping Jacks') */}
           </View>
           
           
@@ -55,7 +38,6 @@ export default function Pushups({navigation}) {
             <Text style={styles.headerText}>
                  Do 10 pushups and click next!
             </Text>
-           {/* <Text>{}</Text>  */}
     
             </View>
       
@@ -67,7 +49,6 @@ export default function Pushups({navigation}) {
         </SafeAreaView>
       );
     }
-    
     
     
     const containerstyle = {backgroundColor:"white"}
