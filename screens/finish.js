@@ -2,7 +2,6 @@ import {
     Text,
     View,
     Image,
-    Button,
     StyleSheet
   } from 'react-native';
 import React, { useEffect } from 'react';
@@ -13,7 +12,6 @@ import { name } from './name';
    const Finish = ({navigation}) => 
    {
     useEffect(() => {
-      // Runs ONCE after initial rendering
       showMessage({
         message: "WOW! You have completed!",
         type: "info",

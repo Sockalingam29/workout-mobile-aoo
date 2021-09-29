@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableNativeFeedback,TextInput, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text,  View ,Image, Button } from 'react-native';
 import { name } from './name';
 export default function App({navigation}) {
 
   return (
-    <SafeAreaView style={[styles.container,containerstyle]}>
+    <View style={[styles.container]}>
      <View style={styles.btn}>
      <Button
      color='red'
@@ -12,8 +12,6 @@ export default function App({navigation}) {
       onPress={() =>navigation.navigate('Pushups')}
       />
     </View>  
-      
-    <TouchableNativeFeedback onPress={()=>console.log("Image Tapped")}>
     <View >
         <Image 
         blurRadius={0}
@@ -26,17 +24,10 @@ export default function App({navigation}) {
          <Text style={styles.headerText}>Are you Ready, {name}?</Text>
         </View>
       </View>
-        </TouchableNativeFeedback> 
-        <StatusBar style="auto" />
-
-
-    </SafeAreaView>
+    </View>
   );
  
 }
-
-
-const containerstyle = {backgroundColor:"white"}
 
 const styles = StyleSheet.create({
   container: {
@@ -44,7 +35,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent:"center",
-    // paddingTop: Platform.OS === "android"? 150 : 0,
   },
   headerText: {
     textAlign:"center",

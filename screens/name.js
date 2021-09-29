@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, View ,Button,} from 'react-native';
+
 let name="";
 export {name};
+
 export default function App({navigation}) {
 
-  //const handlePress=()=> console.log("Text Pressed");
-  // const [name, setname] = useState("User");
   function nameHandler(txt){
       name=txt;
       console.log(name);
   }
+
   function clickHandler(){
     if(name.trim()=="")
     {
       alert("Please enter your name");
     }
     else{
-      navigation.navigate('Start')
+      navigation.navigate('Start');
     }
   }
+ 
   return (
-    <SafeAreaView style={[styles.container,containerstyle]}>
+    <View style={[styles.container]}>
     <View style={styles.innerContainer}>
     <Text style={styles.headerText}>Are you Ready?</Text> 
     <Text style={styles.headerText2}>Enter your name</Text> 
     <TextInput style = {styles.input}
-              //  underlineColorAndroid = "transparent"
                placeholder = "Name"
                placeholderTextColor = "black"
                autoCapitalize = "none"
@@ -34,49 +35,27 @@ export default function App({navigation}) {
      </View>
      <View style={styles.btn}>
      <Button
-     type='submit'
-     color='red'
-      title="Start Workout" 
-      onPress={clickHandler}
+        type='submit'
+        color='red'
+        title=" Let's start" 
+        onPress={clickHandler}
       />
     </View>  
-{/*       
-    <TouchableNativeFeedback onPress={()=>console.log("Image Tapped")}>
-    <View >
-        <Image 
-        blurRadius={0}
-        fadeDuration={1000}
-        style={styles.img}
-        source={
-          require('../start.jpg')}
-         />
-        
-         <Text style={styles.headerText}>Are you Ready??</Text>
-        
-      </View>
-        </TouchableNativeFeedback> */}
-        
-
-    </SafeAreaView>
+    </View>
   );
  
 }
-
-
-const containerstyle = {backgroundColor:"white"}
 
 const styles = StyleSheet.create({
   innerContainer:{
     flex:1,
     alignItems:"center",
     justifyContent:"center",
-    
   },
   container: {
+    backgroundColor:"white",
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    // paddingTop: Platform.OS === "android"? 150 : 0,
   },
   input: {
     margin: 15,
@@ -105,14 +84,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  // img:{
-  //     width:400,
-  //     height:300,
-  // },
   btn:{
     position:"absolute",
     bottom:0,
-   
     width:"100%",
   }
 

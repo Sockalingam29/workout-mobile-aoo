@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableNativeFeedback, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
+import { StyleSheet, Text, View ,Image, Button} from 'react-native';
 
 export default function Jumping({navigation}) {
     return (
-        <SafeAreaView style={[styles.container,containerstyle]}>
+        <View style={[styles.container]}>
         <View style={styles.btn}>
          <Button
          color='red'
@@ -12,9 +12,7 @@ export default function Jumping({navigation}) {
           />
           </View>
           
-          
-        <TouchableNativeFeedback onPress={()=>console.log("Image Tapped")}>
-        <View >
+         <View >
         
             <Image 
             blurRadius={0}
@@ -31,22 +29,16 @@ export default function Jumping({navigation}) {
             </View>
       
           </View>
-        </TouchableNativeFeedback>
-            
-        <StatusBar style="auto" />
-    
-        </SafeAreaView>
+        </View>
       );
     }
-    
-    
-    const containerstyle = {backgroundColor:"white"}
-    
+      
     const styles = StyleSheet.create({
       container: {
         flex: 1,
         alignItems: 'center',
         justifyContent:"center",
+        backgroundColor:"white"
       },
       headerText: {
         textAlign:"center",
