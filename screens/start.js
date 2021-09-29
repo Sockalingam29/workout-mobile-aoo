@@ -1,13 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableNativeFeedback, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
-
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableNativeFeedback,TextInput, View ,Image, SafeAreaView, Button, Alert, Platform, StatusBar, } from 'react-native';
+import { name } from './name';
 export default function App({navigation}) {
 
-  const handlePress=()=> console.log("Text Pressed");
-  
   return (
     <SafeAreaView style={[styles.container,containerstyle]}>
-    <View style={styles.btn}>
+     <View style={styles.btn}>
      <Button
      color='red'
       title="Start Workout" 
@@ -24,16 +22,17 @@ export default function App({navigation}) {
         source={
           require('../start.jpg')}
          />
-        
-         <Text style={styles.headerText}>Are you Ready??</Text>
-        
+        <View>
+         <Text style={styles.headerText}>Are you Ready, {name}?</Text>
+        </View>
       </View>
-        </TouchableNativeFeedback>
-        
-      <StatusBar style="auto" />
+        </TouchableNativeFeedback> 
+        <StatusBar style="auto" />
+
 
     </SafeAreaView>
   );
+ 
 }
 
 
@@ -44,8 +43,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    
-    paddingTop: Platform.OS === "android"? 150 : 0,
+    justifyContent:"center",
+    // paddingTop: Platform.OS === "android"? 150 : 0,
   },
   headerText: {
     textAlign:"center",
@@ -57,9 +56,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   img:{
-      width:400,
-      height:300,
-  },
+    justifyContent:"center",
+    alignItems:"center",
+    width:400,
+    height:300,
+          
+   },
   btn:{
     position:"absolute",
     bottom:0,

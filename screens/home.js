@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Button,
-  StyleSheet
+  StyleSheet,
+  TextInput
 } from 'react-native';
 
 
@@ -16,9 +17,12 @@ import {
       <View style={styles.innerContainer}>
         <Text style={styles.heading}>Workout app 💪</Text>
         <Image style={styles.img} source={require('../home.png')} />
+      {/* </View> */}
+      {/* <View> */}
+
       </View>
       <View style={styles.btn} >
-        <Button color='red' onPress={() =>navigation.navigate('Start')} title='Get started!' />
+        <Button color='red' onPress={() =>navigation.navigate('Name')} title='Get started!' />
       </View>
     </View>
 
@@ -47,8 +51,9 @@ const styles=StyleSheet.create({
     width:400,
     borderWidth: 100,
     height:300,
-    marginBottom:100,
+    
   },
+
   btn:{
     
     position:"absolute",

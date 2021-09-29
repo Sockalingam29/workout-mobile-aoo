@@ -7,6 +7,7 @@ import {
   } from 'react-native';
 import React, { useEffect } from 'react';
 import { showMessage } from 'react-native-flash-message';
+import { name } from './name';
 
   
    const Finish = ({navigation}) => 
@@ -27,7 +28,7 @@ import { showMessage } from 'react-native-flash-message';
         <View style={styles.innerContainer}>
           <Text style={styles.heading}>That's great! 🥳</Text>
           <Image style={styles.img} source={require('../finish.png')} />
-          <Text style={styles.txt}>You have taken your first step towards staying fit 😀</Text>
+          <Text style={styles.txt}>{name}, you have taken your first step towards staying fit 😀</Text>
         
         </View>
         
